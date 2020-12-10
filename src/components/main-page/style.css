@@ -60,16 +60,20 @@ Intro
  */
 
 .intro {
-  background-color: rgb(131, 131, 131);
+  background-color: rgb(34, 34, 34);
   height: 100%;
 }
 
-/* .intro .circle {
-  height: 50px;
-  width: 50px;
-  background-color: blue;
-  border-radius: 50%;
-} */
+.darkRectangle {
+  height: 150px;
+  width: 350px;
+  background-color: rgb(54, 54, 54);
+}
+
+.title-text {
+  opacity: 0;
+  color: white;
+}
 
 /* 
 ==========
@@ -204,9 +208,3 @@ Navbar
     display: flex;
   }
 }
-
-/* .square {
-  height: 50px;
-  width: 50px;
-  background-color: red;
-} */
