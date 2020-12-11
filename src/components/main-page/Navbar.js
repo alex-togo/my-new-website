@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <div className="brand-title">Alex Togo</div>
+        {/* <div className="brand-title">Alex Togo</div> */}
         <a href="/#" className="toggle-button">
           <span className="bar"></span>
           <span className="bar"></span>

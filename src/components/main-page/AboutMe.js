@@ -16,7 +16,9 @@ const AboutMe = () => {
   ];
   return (
     <section className="about-me">
-      <p style={{ textAlign: "center", paddingTop: "20px" }}>About Me</p>
+      <h2 style={{ textAlign: "center", paddingTop: "20px", margin: "0 auto" }}>
+        About Me
+      </h2>
       <div class="container flex-row" style={{ paddingBottom: "20px" }}>
         <img
           id="profile-pic"

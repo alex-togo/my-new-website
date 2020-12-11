@@ -59,19 +59,18 @@ Intro
 ==========
  */
 
-.intro {
+.intro-bg {
   background-color: rgb(34, 34, 34);
-  height: 100%;
+  height: 75vh;
 }
 
 .darkRectangle {
-  height: 150px;
-  width: 350px;
+  width: 35%;
   background-color: rgb(54, 54, 54);
+  box-shadow: 5px 10px 15px 2px;
 }
 
 .title-text {
-  opacity: 0;
   color: white;
 }
 

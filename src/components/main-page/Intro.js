@@ -25,47 +25,63 @@ const Intro = () => {
   // }, []);
 
   useEffect(() => {
-    var dr = anime
-      .timeline({
-        targets: ".darkRectangle",
-        autoplay: false,
-      })
-      .add({
-        duration: 400,
-        easing: "easeInOutExpo",
-        scaleX: [0.05, 0.05],
-        scaleY: [0, 1],
-      })
-      .add({
-        duration: 400,
-        easing: "easeInOutExpo",
-        scaleX: 1,
-      })
-      .add({
-        targets: ".title-text",
-        opacity: [0, 1],
-        delay: anime.stagger(400),
-      });
+    var dr = anime.timeline({
+      targets: ".darkRectangle",
+      autoplay: false,
+    });
+    dr.add({
+      duration: 400,
+      easing: "easeInOutExpo",
+      scaleX: [0.05, 0.05],
+      scaleY: [0, 1],
+    }).add({
+      duration: 300,
+      easing: "easeInOutExpo",
+      scaleX: 1,
+    });
+    dr.add({
+      targets: ".title-text .hey",
+      opacity: [0, 1],
+      easing: "linear",
+    })
+      .add(
+        {
+          targets: ".title-text .im",
+          opacity: [0, 1],
+          easing: "linear",
+        },
+        "+=100"
+      )
+      .add(
+        {
+          targets: ".title-text .my-name",
+          opacity: [0, 1],
+          easing: "linear",
+        },
+        "-=900"
+      );
 
     dr.play();
   }, []);
 
   return (
-    <section className="intro">
-      <div className="container flex">
+    <section className="intro-bg">
+      <div className="container flex-row">
         <Navbar />
       </div>
-      {/* <div className="square" style={{ position: "absolute" }}></div>
-      <p style={{ zIndex: "-1" }}>YO</p>
-      <div className="circle"></div> */}
-      <div className="container flex">
-        <div className="darkRectangle flex">
-          <p className="title-text">Hey,</p>
-          <p className="title-text">I'm</p>
-          <p className="title-text">Alex Togo</p>
+      <div className="container flex" style={{ height: "60vh" }}>
+        <div className="darkRectangle flex-row">
+          <p className="title-text" style={{ fontSize: "24px" }}>
+            <span className="hey">Hey,</span>
+            <span className="im" style={{ display: "block", fontSize: "42px" }}>
+              I'm{" "}
+              <span className="my-name" style={{ color: "rgb(0, 168, 36)" }}>
+                Alex Togo.
+              </span>
+            </span>
+          </p>
         </div>
       </div>
-      {/* <div className="my-name">Alex Togo</div> */}
     </section>
   );
 };
