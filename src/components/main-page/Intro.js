@@ -29,6 +29,7 @@ const Intro = () => {
       targets: ".darkRectangle",
       autoplay: false,
     });
+
     dr.add({
       duration: 400,
       easing: "easeInOutExpo",
@@ -38,7 +39,16 @@ const Intro = () => {
       duration: 300,
       easing: "easeInOutExpo",
       scaleX: 1,
+      complete: () => {
+        anime({
+          targets: ".darkRectangle",
+          boxShadow: "5px 10px 15px 2px rgb(8, 8, 8)",
+          easing: "linear",
+          duration: 900,
+        });
+      },
     });
+
     dr.add({
       targets: ".title-text .hey",
       opacity: [0, 1],
@@ -50,7 +60,7 @@ const Intro = () => {
           opacity: [0, 1],
           easing: "linear",
         },
-        "+=100"
+        "-=600"
       )
       .add(
         {
@@ -60,16 +70,22 @@ const Intro = () => {
         },
         "-=900"
       );
+    // .add(
+    //   {
+    //     targets: ".darkRectangle",
+    //     boxShadow: "5px 10px 15px 2px rgb(8, 8, 8)",
+    //     easing: "linear",
+    //     duration: 300,
+    //   },
+    //   "-=500"
+    // );
 
     dr.play();
   }, []);
 
   return (
     <section className="intro-bg">
-      <div className="container flex-row">
-        <Navbar />
-      </div>
-      <div className="container flex" style={{ height: "60vh" }}>
+      <div className="container flex" style={{ height: "65vh" }}>
         <div className="darkRectangle flex-row">
           <p className="title-text" style={{ fontSize: "24px" }}>
             <span className="hey">Hey,</span>

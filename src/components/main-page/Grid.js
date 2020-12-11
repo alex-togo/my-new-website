@@ -5,7 +5,7 @@ const Grid = ({ skills }) => {
     <div className="skills-grid">
       {skills.map((skill, i) => {
         return (
-          <div key={i} className="skill">
+          <div key={i} className="skill" style={{ color: "white" }}>
             {skill}
           </div>
         );
