@@ -4,6 +4,7 @@ import AboutMe from "./AboutMe";
 import MyWork from "./MyWork";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 
 const MainPage = () => {
@@ -14,6 +15,13 @@ const MainPage = () => {
       <AboutMe />
       <MyWork />
       <Contact />
+      {/* <Router>
+        <Route path="/" component={Intro} />
+        <Navbar />
+        <Route path="/about-me" component={AboutMe} />
+        <Route path="/my-work" component={MyWork} />
+        <Route path="/contact" component={Contact} />
+      </Router> */}
     </>
   );
 };

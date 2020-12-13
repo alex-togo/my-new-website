@@ -2,7 +2,7 @@ import React from "react";
 
 const MyWork = () => {
   return (
-    <section className="my-work">
+    <section className="my-work info-section" id="my-work">
       <div className="container flex canvas">
         <p>My Work</p>
       </div>

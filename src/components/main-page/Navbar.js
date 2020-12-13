@@ -23,13 +23,16 @@ const Navbar = () => {
         <div className="navbar-links">
           <ul>
             <li>
-              <a href="/#">Home</a>
+              <a href="#intro">Home</a>
             </li>
             <li>
-              <a href="/#">About</a>
+              <a href="#about-me">About</a>
             </li>
             <li>
-              <a href="/#">Contact</a>
+              <a href="#my-work">My Work</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </div>

@@ -1,29 +1,7 @@
 import React, { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
-import Navbar from "./Navbar";
 
 const Intro = () => {
-  // set viewbox to bounding box to get rid of whitespace
-  // function setViewbox(svg) {
-  //   var bb = svg.getBBox();
-  //   svg.setAttribute(
-  //     "viewBox",
-  //     bb.x + "," + bb.y + "," + bb.width + "," + bb.height
-  //   );
-  // }
-
-  // useEffect(() => {
-  //   setViewbox(document.querySelector("svg"));
-  // }, []);
-
-  // useEffect(() => {
-  //   anime({
-  //     targets: ".square",
-  //     width: "100%", // -> from '28px' to '100%',
-  //     easing: "easeInOutQuad",
-  //   });
-  // }, []);
-
   useEffect(() => {
     var dr = anime.timeline({
       targets: ".darkRectangle",
@@ -69,36 +47,50 @@ const Intro = () => {
           easing: "linear",
         },
         "-=900"
+      )
+      .add(
+        {
+          targets: ".title-text .job-title",
+          opacity: [0, 1],
+          easing: "linear",
+        },
+        "-=300"
+      )
+      .add(
+        {
+          targets: ".button",
+          opacity: [0, 1],
+          easing: "linear",
+        },
+        "+=200"
       );
-    // .add(
-    //   {
-    //     targets: ".darkRectangle",
-    //     boxShadow: "5px 10px 15px 2px rgb(8, 8, 8)",
-    //     easing: "linear",
-    //     duration: 300,
-    //   },
-    //   "-=500"
-    // );
 
     dr.play();
   }, []);
 
   return (
-    <section className="intro-bg">
-      <div className="container flex" style={{ height: "65vh" }}>
-        <div className="darkRectangle flex-row">
-          <p className="title-text" style={{ fontSize: "24px" }}>
-            <span className="hey">Hey,</span>
-            <span className="im" style={{ display: "block", fontSize: "42px" }}>
-              I'm{" "}
+    <>
+      <section className="intro-bg" id="intro">
+        <div className="container flex" style={{ height: "95vh" }}>
+          <div className="darkRectangle flex">
+            <div className="title-text">
+              <span className="hey">Hey,</span>
+              <span className="im"> I'm </span>
               <span className="my-name" style={{ color: "rgb(0, 168, 36)" }}>
                 Alex Togo.
               </span>
-            </span>
-          </p>
+              <br></br>
+              <span className="job-title">I'm an aspiring web developer.</span>
+            </div>
+            <div className="button">
+              <a href="#my-work" style={{ textDecoration: "none" }}>
+                View My Work
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
