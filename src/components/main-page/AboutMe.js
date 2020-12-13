@@ -1,8 +1,47 @@
 import React from "react";
 import me from "./images/me-profile.jpg";
 import Grid from "./Grid";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import anime from "animejs/lib/anime.es.js";
 
 const AboutMe = () => {
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+
+  useEffect(() => {
+    let aboutAnim = anime.timeline({
+      autoplay: false,
+    });
+
+    aboutAnim
+      .add({
+        targets: "#about-title",
+        opacity: [0, 1],
+        easing: "easeInSine",
+        duration: 1000,
+      })
+      .add(
+        {
+          targets: "#profile-pic",
+          opacity: [0, 1],
+          easing: "easeInSine",
+          duration: 600,
+        },
+        "-=1000"
+      )
+      .add(
+        {
+          targets: "#about-text",
+          opacity: [0, 1],
+          easing: "easeInSine",
+          duration: 600,
+        },
+        "-=1000"
+      );
+
+    aboutAnim.play();
+  }, [inView]);
+
   const skills = [
     "C++",
     "Java",
@@ -15,55 +54,30 @@ const AboutMe = () => {
     "Bootstrap",
   ];
 
-  // function isElementInViewport(el) {
-  //   var rect = el.getBoundingClientRect();
-
-  //   return (
-  //     rect.top >= 0 &&
-  //     rect.left >= 0 &&
-  //     rect.bottom <=
-  //       (window.innerHeight ||
-  //         document.documentElement.clientHeight) /* or $(window).height() */ &&
-  //     rect.right <=
-  //       (window.innerWidth ||
-  //         document.documentElement.clientWidth) /* or $(window).width() */
-  //   );
-  // }
-
-  // function onVisibilityChange(el, callback) {
-  //   var old_visible;
-  //   return function () {
-  //     var visible = isElementInViewport(el);
-  //     if (visible != old_visible) {
-  //       old_visible = visible;
-  //       if (typeof callback == "function") {
-  //         callback();
-  //       }
-  //     }
-  //   };
-  // }
-
   return (
     <section className="about-me info-section flex" id="about-me">
       <h2
+        id="about-title"
         style={{
           textAlign: "center",
           margin: "0 auto",
           color: "white",
+          marginBottom: "50px",
         }}
       >
         About Me
       </h2>
-      <div class="flex-row">
+      <div className="flex-row">
         <img
           id="profile-pic"
           src={me}
           height="auto"
           width="100%"
           style={{ maxWidth: "150px" }}
-          alt="Picture of me"
+          alt="Me"
+          ref={ref}
         />
-        <article className="container">
+        <article className="container" id="about-text" ref={ref}>
           <p style={{ maxWidth: "300px", padding: "0 30px", color: "white" }}>
             Hey! My name is Alex Togo and I'm an aspiring web developer who
             recently graduated from Seneca College with a perfect 4.0 GPA! I'm

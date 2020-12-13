@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Navbar from "./Navbar";
 import anime from "animejs/lib/anime.es.js";
 
 const Intro = () => {
@@ -71,6 +72,7 @@ const Intro = () => {
   return (
     <>
       <section className="intro-bg" id="intro">
+        {/* <Navbar /> */}
         <div className="container flex" style={{ height: "95vh" }}>
           <div className="darkRectangle flex">
             <div className="title-text">
