@@ -61,7 +61,14 @@ Flex
   flex-wrap: wrap;
 }
 
-.flex.space-between-sm {
+.flex.space-between.sm {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.flex.space-between.md {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -69,7 +76,14 @@ Flex
 }
 
 @media (max-width: 1200px) {
-  .flex.space-between-sm {
+  .flex.space-between.sm {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .flex.space-between.md {
     flex-direction: column;
     justify-content: center;
   }
@@ -196,6 +210,24 @@ About Me
   flex: 0 32%;
 }
 
+.line {
+  height: 4px;
+  width: 70px;
+  background-color: white;
+  margin: 15px 0 100px 0;
+}
+
+.row-list-item {
+  padding: 20px 0;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #1c2f41;
+}
+
 /* 
 ==========
 My Work
@@ -203,15 +235,8 @@ My Work
  */
 
 .my-work {
-  background-color: #1d2a36;
+  background-color: #1c2f41;
   height: 100%;
-}
-
-.line {
-  height: 4px;
-  width: 70px;
-  background-color: white;
-  margin: 15px 0 100px 0;
 }
 
 /* @media (max-width: 990px) {
@@ -220,13 +245,6 @@ My Work
     justify-content: center;
   }
 } */
-
-.circle {
-  height: 100px;
-  width: 100px;
-  border-radius: 50px;
-  background-color: blue;
-}
 
 /* 
 ==========
@@ -249,7 +267,7 @@ Navbar
   display: flex;
   justify-content: center;
   /* background-color: rgb(34, 34, 34); */
-  background-color: #1d2a36;
+  background-color: #1c2f41;
   position: sticky;
   top: 0;
   color: white;
@@ -340,7 +358,7 @@ Footer
   display: flex;
   justify-content: center;
   /* background-color: rgb(34, 34, 34); */
-  background-color: #1d2a36;
+  background-color: #1c2f41;
   position: sticky;
   top: 0;
   color: white;

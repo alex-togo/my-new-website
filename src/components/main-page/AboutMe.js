@@ -4,32 +4,42 @@ import Grid from "./Grid";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import anime from "animejs/lib/anime.es.js";
+import SectionTitle from "./SectionTitle";
 
 const AboutMe = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   useEffect(() => {
     let aboutAnim = anime.timeline({
+      targets: "about-me",
       autoplay: false,
     });
 
     aboutAnim
-      .add({
-        targets: "#about-title",
-        translateX: [-270, 0],
-        opacity: [0, 1],
-        easing: "easeInSine",
-        duration: 1000,
-      })
-      .add({
-        targets: ".line",
-        width: [0, 70],
-        easing: "easeInSine",
-        duration: 300,
-      })
+      .add(
+        {
+          targets: ".row-list .row-list-item",
+          opacity: [0, 1],
+          translateX: [-500, 0],
+          easing: "easeInSine",
+          delay: anime.stagger(400),
+          duration: 500,
+        },
+        "-=200"
+      )
       .add(
         {
           targets: "#profile-pic",
+          translateX: [-270, 0],
+          opacity: [0, 1],
+          easing: "easeInSine",
+          duration: 600,
+        },
+        "-=1500"
+      )
+      .add(
+        {
+          targets: ".who-am-i",
           opacity: [0, 1],
           easing: "easeInSine",
           duration: 600,
@@ -44,9 +54,23 @@ const AboutMe = () => {
           duration: 600,
         },
         "-=1000"
+      )
+      .add(
+        {
+          targets: ".my-skills-title",
+          opacity: [0, 1],
+          translateX: [270, 0],
+        },
+        "-=1000"
       );
-
-    aboutAnim.play();
+    if (inView) {
+      // anime({
+      //   targets: ".about-me",
+      //   border: "1px solid white",
+      //   easing: "easeInOutQuad",
+      // });
+      aboutAnim.play();
+    }
   }, [inView]);
 
   const skills = [
@@ -62,20 +86,10 @@ const AboutMe = () => {
   ];
 
   return (
-    <section className="about-me info-section" id="about-me">
+    <section className="about-me info-section" id="about-me" ref={ref}>
       <div className="container flex">
-        <div
-          id="about-title"
-          style={{
-            textAlign: "center",
-            color: "white",
-            fontSize: "30px",
-          }}
-        >
-          About Me
-        </div>
-        <div className="line"></div>
-        <div className="flex space-between">
+        <SectionTitle title={"About Me"} id="about-me-title" />
+        <div className="flex space-between md row-list">
           <div className="flex row-list-item">
             <div className="circle flex">
               <svg
@@ -145,31 +159,28 @@ const AboutMe = () => {
           </div>
         </div>
         <div
-          className="skills-container flex row"
+          className="skills-container flex space-between sm"
           style={{
             margin: "75px 0 0 0",
           }}
         >
-          <div className="me-container flex" style={{ padding: "0 50px" }}>
-            <img
-              id="profile-pic"
-              src={me}
-              height="auto"
-              width="100%"
-              style={{ maxWidth: "200px", borderRadius: "100px" }}
-              alt="Me"
-              ref={ref}
-            />
-          </div>
-          <div>
+          <img
+            id="profile-pic"
+            src={me}
+            height="auto"
+            width="100%"
+            style={{ maxWidth: "200px", borderRadius: "100px" }}
+            alt="Me"
+            ref={ref}
+          />
+
+          <div className="who-am-i" style={{ padding: "20px 0" }} ref={ref}>
             {" "}
-            <div className="who-am-i" style={{ textAlign: "center" }}>
+            <h3 className="who-am-i-title" style={{ textAlign: "center" }}>
               Who Am I?
-            </div>
-            <article className="" id="about-text" ref={ref}>
-              <p
-                style={{ maxWidth: "200px", padding: "0 30px", color: "white" }}
-              >
+            </h3>
+            <article className="who-am-i-text" ref={ref}>
+              <p style={{ maxWidth: "260px" }}>
                 Hey! My name is Alex Togo and I'm an aspiring web developer who
                 recently graduated from Seneca College with a perfect 4.0 GPA!
               </p>
@@ -177,7 +188,9 @@ const AboutMe = () => {
           </div>
 
           <div>
-            <p style={{ textAlign: "center", color: "white" }}>My Skills</p>
+            <h3 className="my-skills-title" style={{ textAlign: "center" }}>
+              My Skills
+            </h3>
             {}
             <Grid skills={skills} />
           </div>
