@@ -4,6 +4,7 @@ import AboutMe from "./AboutMe";
 import MyWork from "./MyWork";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 
@@ -15,6 +16,7 @@ const MainPage = () => {
       <AboutMe />
       <MyWork />
       <Contact />
+      <Footer />
       {/* <Router>
         <Route path="/" component={Intro} />
         <Navbar />
