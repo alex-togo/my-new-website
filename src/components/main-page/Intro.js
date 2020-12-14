@@ -82,7 +82,7 @@ const Intro = () => {
                 Alex Togo.
               </span>
               <br></br>
-              <span className="job-title">I'm an aspiring web developer.</span>
+              <span className="job-title">I'm a web developer.</span>
             </div>
             <div className="button">
               <a href="#my-work" style={{ textDecoration: "none" }}>

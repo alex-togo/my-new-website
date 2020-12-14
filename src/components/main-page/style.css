@@ -47,22 +47,49 @@ Flex
   flex-direction: column;
 }
 
-.flex-row {
-  display: flex;
+.flex.row {
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  flex-direction: row;
 }
 
-@media (max-width: 945px) {
-  .flex-row {
+.flex.space-between {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.flex.space-between-sm {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+  .flex.space-between-sm {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .flex.space-between {
+    flex-direction: column;
+  }
+}
+@media (max-width: 990px) {
+  .flex.row {
     flex-direction: column;
   }
 }
 
 /* 
-=========================
-Sections Under Main Intro
-=========================
+=============================
+All Sections Under Main Intro
+=============================
  */
 
 .info-section {
@@ -178,6 +205,27 @@ My Work
 .my-work {
   background-color: #1d2a36;
   height: 100%;
+}
+
+.line {
+  height: 4px;
+  width: 70px;
+  background-color: white;
+  margin: 15px 0 100px 0;
+}
+
+/* @media (max-width: 990px) {
+  .skills-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+} */
+
+.circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: blue;
 }
 
 /* 
