@@ -247,10 +247,13 @@ My Work
 }
 
 .arrow-up {
+  transform: rotate(0deg);
+  transition: transform 0.3s linear;
 }
 
 .arrow-down {
   transform: rotate(180deg);
+  transition: transform 0.3s linear;
 }
 
 /* 

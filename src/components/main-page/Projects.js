@@ -6,15 +6,7 @@ const Projects = () => {
   return (
     <div className="flex row">
       {data.map((item) => {
-        return (
-          <Project
-            key={item.id}
-            {...item}
-            // title={data.title}
-            // info={data.info}
-            // img={data.img}
-          />
-        );
+        return <Project key={item.id} {...item} />;
       })}
     </div>
   );
