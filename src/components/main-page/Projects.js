@@ -4,9 +4,9 @@ import data from "./project-data";
 
 const Projects = () => {
   return (
-    <div className="flex row">
-      {data.map((item) => {
-        return <Project key={item.id} {...item} />;
+    <div className="container flex row wrap">
+      {data.map((project) => {
+        return <Project key={project.id} {...project} />;
       })}
     </div>
   );

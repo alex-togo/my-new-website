@@ -21,10 +21,9 @@ const MyWork = () => {
 
   return (
     <section className="my-work info-section" id="my-work">
-      <div className="container flex">
-        <SectionTitle title={"My Work"} id="my-work-title" />
-        <Projects />
-      </div>
+      <SectionTitle title={"My Work"} id="my-work-title" />
+
+      <Projects />
     </section>
   );
 };

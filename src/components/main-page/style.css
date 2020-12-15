@@ -48,10 +48,11 @@ Flex
 }
 
 .flex.row {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   flex-direction: row;
+}
+
+.flex.wrap {
+  flex-wrap: wrap;
 }
 
 .flex.space-between {
@@ -242,9 +243,17 @@ My Work
 
 .proj-img {
   width: 100%;
-  height: auto;
-  max-width: 600px;
+  height: 250px;
+  max-width: 500px;
+  /* max-width: 600px; */
 }
+
+/* @media (max-width: 555px) {
+  .proj-img {
+    width: 250px;
+    height: 100px;
+  }
+} */
 
 .arrow-up {
   transform: rotate(0deg);
@@ -254,6 +263,19 @@ My Work
 .arrow-down {
   transform: rotate(180deg);
   transition: transform 0.3s linear;
+}
+
+.project {
+  margin: 10px 30px;
+}
+
+.proj-button {
+  font-size: 28px;
+  border: 2px solid white;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px 15px;
 }
 
 /* 
