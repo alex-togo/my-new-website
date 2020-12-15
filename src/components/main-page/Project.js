@@ -16,7 +16,7 @@ const Project = ({ title, info, img, id }) => {
 
     projAnim.add({
       targets: `#${id}`,
-      translateX: [200, 0],
+      translateY: [200, 0],
       opacity: [0, 1],
       duration: 1200,
     });
@@ -48,7 +48,7 @@ const Project = ({ title, info, img, id }) => {
   return (
     <div className="flex project" ref={ref} id={id}>
       <h2>{title}</h2>
-      <img src={img} alt={"Project Image"} className="proj-img" />
+      <img src={img} alt={id} className="proj-img" />
       <div
         onClick={() => {
           setShowInfo(!showInfo);
@@ -61,7 +61,7 @@ const Project = ({ title, info, img, id }) => {
           width="20"
           height="20"
           fill="currentColor"
-          className={`${arrowDown ? "arrow-up" : "arrow-down"}`}
+          className={`${arrowDown ? "arrow-down" : "arrow-up"}`}
           viewBox="0 0 16 16"
         >
           <path

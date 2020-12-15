@@ -243,17 +243,9 @@ My Work
 
 .proj-img {
   width: 100%;
-  height: 250px;
-  max-width: 500px;
-  /* max-width: 600px; */
+  height: auto;
+  max-width: 800px;
 }
-
-/* @media (max-width: 555px) {
-  .proj-img {
-    width: 250px;
-    height: 100px;
-  }
-} */
 
 .arrow-up {
   transform: rotate(0deg);
@@ -287,6 +279,17 @@ Contact Me
 .contact-me {
   background-color: #14202e;
   height: 100%;
+}
+
+#contact-form input {
+  padding: 0.25rem 0.5rem;
+}
+
+.form-control {
+  margin: 0.5rem 0;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
 }
 
 /* 

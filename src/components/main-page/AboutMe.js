@@ -7,7 +7,7 @@ import anime from "animejs/lib/anime.es.js";
 import SectionTitle from "./SectionTitle";
 
 const AboutMe = () => {
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
 
   useEffect(() => {
     let aboutAnim = anime.timeline({
@@ -30,7 +30,7 @@ const AboutMe = () => {
       .add(
         {
           targets: "#profile-pic",
-          translateX: [-500, 0],
+          translateX: [-200, 0],
           opacity: [0, 1],
           easing: "easeInSine",
           duration: 800,
@@ -59,7 +59,7 @@ const AboutMe = () => {
         {
           targets: ".my-skills-title",
           opacity: [0, 1],
-          translateX: [270, 0],
+          translateY: [270, 0],
         },
         "-=1000"
       )
