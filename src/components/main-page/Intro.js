@@ -59,7 +59,7 @@ const Intro = () => {
       )
       .add(
         {
-          targets: ".button",
+          targets: ".darkRectangle .button",
           opacity: [0, 1],
           easing: "linear",
         },

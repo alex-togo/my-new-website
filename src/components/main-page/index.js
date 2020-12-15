@@ -5,7 +5,6 @@ import MyWork from "./MyWork";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 
 const MainPage = () => {

@@ -62,12 +62,15 @@ const AboutMe = () => {
           translateX: [270, 0],
         },
         "-=1000"
-      );
+      )
+      .add({
+        targets: ".circle",
+        borderWidth: [0, 2],
+      });
     if (inView) {
       // anime({
       //   targets: ".about-me",
-      //   border: "1px solid white",
-      //   easing: "easeInOutQuad",
+      //   borderWidth: [0, 2],
       // });
       aboutAnim.play();
     }
@@ -86,7 +89,12 @@ const AboutMe = () => {
   ];
 
   return (
-    <section className="about-me info-section" id="about-me" ref={ref}>
+    <section
+      className="about-me info-section"
+      id="about-me"
+      ref={ref}
+      // style={{ border: "1px solid white" }}
+    >
       <div className="container flex">
         <SectionTitle title={"About Me"} id="about-me-title" />
         <div className="flex space-between md row-list">
@@ -97,7 +105,7 @@ const AboutMe = () => {
                 width="40"
                 height="40"
                 fill="currentColor"
-                class="bi bi-card-checklist"
+                className="bi bi-card-checklist"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -122,7 +130,7 @@ const AboutMe = () => {
                 width="40"
                 height="40"
                 fill="currentColor"
-                class="bi bi-alarm"
+                className="bi bi-alarm"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -143,7 +151,7 @@ const AboutMe = () => {
                 width="40"
                 height="40"
                 fill="currentColor"
-                class="bi bi-cpu"
+                className="bi bi-cpu"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -181,8 +189,8 @@ const AboutMe = () => {
             </h3>
             <article className="who-am-i-text" ref={ref}>
               <p style={{ maxWidth: "260px" }}>
-                Hey! My name is Alex Togo and I'm an aspiring web developer who
-                recently graduated from Seneca College with a perfect 4.0 GPA!
+                Hey! My name is Alex Togo and I'm a web developer who recently
+                graduated from Seneca College with a perfect 4.0 GPA!
               </p>
             </article>
           </div>
