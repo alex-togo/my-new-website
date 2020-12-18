@@ -302,6 +302,10 @@ textarea {
   }
 }
 
+.error {
+  color: red;
+}
+
 /* .form-control {
   margin: 0.5rem 0;
   display: grid;
