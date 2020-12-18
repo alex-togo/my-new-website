@@ -40,7 +40,13 @@ const Contact = () => {
     <section className="contact-me info-section" id="contact">
       <div className="container flex">
         <SectionTitle title={"Contact"} id="contact-title" />
-        <form netlify id="contact-form" className="flex wrap" method="POST">
+        <form
+          netlify
+          name="contact"
+          id="contact-form"
+          className="flex wrap"
+          method="POST"
+        >
           {/* <label htmlFor="name">Name: </label> */}
           <input
             type="text"
