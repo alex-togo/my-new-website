@@ -32,6 +32,9 @@ const Contact = () => {
     //   .catch((err) => {
     //     setPerson({ emailSent: false });
     //   });
+    let form = document.querySelector("#contact-form");
+    let successMsg = document.createTextNode("Your message was sent!");
+    form.appendChild(successMsg);
 
     console.log(person);
   };
@@ -71,7 +74,7 @@ const Contact = () => {
             rows="5"
             onChange={handleChange}
           ></textarea>
-          <div data-netlify-recaptcha="true"></div>
+          {/* <div data-netlify-recaptcha="true"></div> */}
 
           <button
             type="submit"
