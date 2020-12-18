@@ -70,6 +70,7 @@ const Contact = () => {
           method="POST"
           onSubmit={handleSubmit}
         >
+          <input type="hidden" name="form-name" value="contact" />
           {/* <label htmlFor="name">Name: </label> */}
           <input
             type="text"
