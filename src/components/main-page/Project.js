@@ -6,7 +6,7 @@ const Project = ({ title, info, img, id }) => {
   const [showInfo, setShowInfo] = useState(false);
   const [arrowDown, setArrowDown] = useState(false);
 
-  const [ref, inView] = useInView({ threshold: 0.7, triggerOnce: true });
+  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
 
   useEffect(() => {
     let projAnim = anime.timeline({

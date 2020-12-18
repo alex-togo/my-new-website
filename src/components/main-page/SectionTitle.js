@@ -14,7 +14,7 @@ const SectionTitle = ({ title, id }) => {
     titleAnim
       .add({
         targets: `#${id} .section-title`,
-        translateX: [-270, 0],
+        translateX: [-200, 0],
         opacity: [0, 1],
         easing: "easeInSine",
         duration: 600,

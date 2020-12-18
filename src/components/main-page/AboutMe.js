@@ -7,7 +7,7 @@ import anime from "animejs/lib/anime.es.js";
 import SectionTitle from "./SectionTitle";
 
 const AboutMe = () => {
-  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   useEffect(() => {
     let aboutAnim = anime.timeline({
@@ -33,6 +33,7 @@ const AboutMe = () => {
           translateX: [-200, 0],
           opacity: [0, 1],
           easing: "easeInSine",
+          delay: anime.stagger(400),
           duration: 800,
         },
         "-=1500"

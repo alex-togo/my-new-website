@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Navbar from "./Navbar";
 import anime from "animejs/lib/anime.es.js";
 
 const Intro = () => {
@@ -85,7 +84,11 @@ const Intro = () => {
               <span className="job-title">I'm a web developer.</span>
             </div>
             <div className="button">
-              <a href="#my-work" style={{ textDecoration: "none" }}>
+              <a
+                className="flex"
+                href="#my-work"
+                style={{ textDecoration: "none", textAlign: "center" }}
+              >
                 View My Work
               </a>
             </div>

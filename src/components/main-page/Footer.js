@@ -12,6 +12,7 @@ const Footer = () => {
               <a href="https://github.com/alex-togo">
                 <img
                   src={github}
+                  alt="Github Logo"
                   height="auto"
                   width="100%"
                   style={{ maxWidth: "80px" }}
@@ -22,6 +23,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/in/alex-togo/">
                 <img
                   src={linkedin}
+                  alt="LinkedIn Logo"
                   height="auto"
                   width="100%"
                   style={{ maxWidth: "130px" }}
