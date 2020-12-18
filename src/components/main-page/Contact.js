@@ -37,15 +37,15 @@ const Contact = () => {
   };
 
   return (
-    <section
-      className="contact-me info-section"
-      id="contact"
-      data-netlify="true"
-      action="POST"
-    >
+    <section className="contact-me info-section" id="contact">
       <div className="container flex">
         <SectionTitle title={"Contact"} id="contact-title" />
-        <form id="contact-form" className="flex wrap" method="post">
+        <form
+          id="contact-form"
+          className="flex wrap"
+          method="POST"
+          data-netlify="true"
+        >
           {/* <label htmlFor="name">Name: </label> */}
           <input
             type="text"
