@@ -4,40 +4,40 @@ import SectionTitle from "./SectionTitle";
 // const nodemailer = require("nodemailer");
 
 const Contact = () => {
-  const [person, setPerson] = useState({
-    name: "",
-    email: "",
-    message: "",
-    emailSent: null,
-  });
+  // const [person, setPerson] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  //   emailSent: null,
+  // });
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setPerson({ ...person, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   setPerson({ ...person, [name]: value });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    // axios
-    //   .post("http://localhost:3030/api/email", person)
-    //   .then((res) => {
-    //     if (res.data.success) {
-    //       setPerson({ emailSent: true });
-    //     } else {
-    //       setPerson({ emailSent: false });
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     setPerson({ emailSent: false });
-    //   });
-    let form = document.querySelector("#contact-form");
-    let successMsg = document.createTextNode("Your message was sent!");
-    form.appendChild(successMsg);
+  //   // axios
+  //   //   .post("http://localhost:3030/api/email", person)
+  //   //   .then((res) => {
+  //   //     if (res.data.success) {
+  //   //       setPerson({ emailSent: true });
+  //   //     } else {
+  //   //       setPerson({ emailSent: false });
+  //   //     }
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     setPerson({ emailSent: false });
+  //   //   });
+  //   let form = document.querySelector("#contact-form");
+  //   let successMsg = document.createTextNode("Your message was sent!");
+  //   form.appendChild(successMsg);
 
-    console.log(person);
-  };
+  //   console.log(person);
+  // };
 
   return (
     <section className="contact-me info-section" id="contact">
@@ -55,7 +55,7 @@ const Contact = () => {
             type="text"
             name="name"
             placeholder="Name"
-            onChange={handleChange}
+            // onChange={handleChange}
           ></input>
 
           {/* <label htmlFor="email">Email: </label> */}
@@ -63,7 +63,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Email"
-            onChange={handleChange}
+            // onChange={handleChange}
           ></input>
 
           {/* <label htmlFor="message">Message: </label> */}
@@ -72,7 +72,7 @@ const Contact = () => {
             name="message"
             placeholder="Type your message here."
             rows="5"
-            onChange={handleChange}
+            // onChange={handleChange}
           ></textarea>
           {/* <div data-netlify-recaptcha="true"></div> */}
 
@@ -80,7 +80,7 @@ const Contact = () => {
             type="submit"
             value="submit"
             className="submit-btn"
-            onClick={handleSubmit}
+            // onClick={handleSubmit}
           >
             Send
           </button>
