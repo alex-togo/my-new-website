@@ -4,17 +4,17 @@ import SectionTitle from "./SectionTitle";
 // const nodemailer = require("nodemailer");
 
 const Contact = () => {
-  const [person, setPerson] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // const [person, setPerson] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setPerson({ ...person, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   setPerson({ ...person, [name]: value });
+  // };
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -38,25 +38,25 @@ const Contact = () => {
   //   console.log(person);
   // };
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
+  // const encode = (data) => {
+  //   return Object.keys(data)
+  //     .map(
+  //       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+  //     )
+  //     .join("&");
+  // };
 
-  const handleSubmit = (e) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...person }),
-    })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
+  // const handleSubmit = (e) => {
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: encode({ "form-name": "contact", ...person }),
+  //   })
+  //     .then(() => alert("Success!"))
+  //     .catch((error) => alert(error));
 
-    e.preventDefault();
-  };
+  //   e.preventDefault();
+  // };
 
   return (
     <section className="contact-me info-section" id="contact">
@@ -68,7 +68,7 @@ const Contact = () => {
           id="contact-form"
           className="flex wrap"
           method="POST"
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
           {/* <label htmlFor="name">Name: </label> */}
@@ -76,7 +76,7 @@ const Contact = () => {
             type="text"
             name="name"
             placeholder="Name"
-            onChange={handleChange}
+            // onChange={handleChange}
           ></input>
 
           {/* <label htmlFor="email">Email: </label> */}
@@ -84,7 +84,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Email"
-            onChange={handleChange}
+            // onChange={handleChange}
           ></input>
 
           {/* <label htmlFor="message">Message: </label> */}
@@ -92,7 +92,7 @@ const Contact = () => {
             name="message"
             placeholder="Type your message here."
             rows="5"
-            onChange={handleChange}
+            // onChange={handleChange}
           ></textarea>
           {/* <div data-netlify-recaptcha="true"></div> */}
 
