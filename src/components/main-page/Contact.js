@@ -37,7 +37,12 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact-me info-section" id="contact">
+    <section
+      className="contact-me info-section"
+      id="contact"
+      data-netlify="true"
+      action="POST"
+    >
       <div className="container flex">
         <SectionTitle title={"Contact"} id="contact-title" />
         <form id="contact-form" className="flex wrap" method="post">
@@ -65,6 +70,7 @@ const Contact = () => {
             rows="5"
             onChange={handleChange}
           ></textarea>
+          <div data-netlify-recaptcha="true"></div>
 
           <button
             type="submit"

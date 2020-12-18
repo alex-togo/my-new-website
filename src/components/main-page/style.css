@@ -162,13 +162,13 @@ Intro
   padding: 10px 20px;
 }
 
-.button a:link {
-  color: white;
-}
-
 .button:hover {
   transition: background-color 0.5s ease-in-out;
   background-color: #2f4255;
+}
+
+.button a:link {
+  color: white;
 }
 
 .button a:visited {
