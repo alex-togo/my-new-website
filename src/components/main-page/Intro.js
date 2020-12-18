@@ -90,7 +90,6 @@ const Intro = () => {
                 style={{
                   textDecoration: "none",
                   textAlign: "center",
-                  color: "white",
                 }}
               >
                 View My Work
