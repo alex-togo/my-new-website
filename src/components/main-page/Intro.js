@@ -87,7 +87,11 @@ const Intro = () => {
               <a
                 className="flex"
                 href="#my-work"
-                style={{ textDecoration: "none", textAlign: "center" }}
+                style={{
+                  textDecoration: "none",
+                  textAlign: "center",
+                  color: "white",
+                }}
               >
                 View My Work
               </a>
