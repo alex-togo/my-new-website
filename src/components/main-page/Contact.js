@@ -4,18 +4,17 @@ import SectionTitle from "./SectionTitle";
 // const nodemailer = require("nodemailer");
 
 const Contact = () => {
-  // const [person, setPerson] = useState({
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  //   emailSent: null,
-  // });
+  const [person, setPerson] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  // const handleChange = (e) => {
-  //   const name = e.target.name;
-  //   const value = e.target.value;
-  //   setPerson({ ...person, [name]: value });
-  // };
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setPerson({ ...person, [name]: value });
+  };
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -39,6 +38,18 @@ const Contact = () => {
   //   console.log(person);
   // };
 
+  const handleSubmit = (e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...person }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  };
+
   return (
     <section className="contact-me info-section" id="contact">
       <div className="container flex">
@@ -49,13 +60,14 @@ const Contact = () => {
           id="contact-form"
           className="flex wrap"
           method="POST"
+          onSubmit={handleSubmit}
         >
           {/* <label htmlFor="name">Name: </label> */}
           <input
             type="text"
             name="name"
             placeholder="Name"
-            // onChange={handleChange}
+            onChange={handleChange}
           ></input>
 
           {/* <label htmlFor="email">Email: </label> */}
@@ -63,25 +75,19 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Email"
-            // onChange={handleChange}
+            onChange={handleChange}
           ></input>
 
           {/* <label htmlFor="message">Message: </label> */}
           <textarea
-            type="text"
             name="message"
             placeholder="Type your message here."
             rows="5"
-            // onChange={handleChange}
+            onChange={handleChange}
           ></textarea>
           {/* <div data-netlify-recaptcha="true"></div> */}
 
-          <button
-            type="submit"
-            value="submit"
-            className="submit-btn"
-            // onClick={handleSubmit}
-          >
+          <button type="submit" value="submit" className="submit-btn">
             Send
           </button>
         </form>
