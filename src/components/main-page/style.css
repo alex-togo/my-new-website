@@ -312,6 +312,10 @@ My Work
   text-decoration: none;
 }
 
+.flex.links-row {
+  flex-direction: row;
+}
+
 /* .proj-img img {
   transition: 0.5 all;
 }

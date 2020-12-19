@@ -81,7 +81,7 @@ const Intro = () => {
                 Alex Togo.
               </span>
               <br></br>
-              <span className="job-title">I'm a web developer.</span>
+              <span className="job-title">I'm a programmer.</span>
             </div>
             <div className="button">
               <a

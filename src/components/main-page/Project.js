@@ -2,7 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import anime from "animejs/lib/anime.es.js";
 
-const Project = ({ title, info, img, id, github, link }) => {
+const Project = ({
+  title,
+  info,
+  technologies,
+  note,
+  img,
+  id,
+  github,
+  link,
+}) => {
   const [showInfo, setShowInfo] = useState(false);
   const [arrowDown, setArrowDown] = useState(false);
 
@@ -51,7 +60,7 @@ const Project = ({ title, info, img, id, github, link }) => {
       <img src={img} alt={id} className="proj-img" />
       {/* <div className="img-button">View on Github</div>
       <div className="img-button">View Project</div> */}
-      <div className="proj-links-row flex row">
+      <div className="proj-links-row flex links-row">
         {link === null ? (
           <button className="button proj" disabled>
             <a href={link}>View Project Page</a>
@@ -93,14 +102,25 @@ const Project = ({ title, info, img, id, github, link }) => {
         )}
       </div>
       <div
-        className="proj-info"
+        className="proj-info flex row"
         style={{
-          maxWidth: "400px",
+          maxWidth: "600px",
           textAlign: "center",
           margin: "30px 0 0 0",
         }}
       >
-        {showInfo && info}
+        {showInfo && (
+          <div>
+            Technologies:{" "}
+            <ul>
+              {technologies.map((item) => {
+                return <li>{item}</li>;
+              })}
+            </ul>
+          </div>
+        )}
+        <div style={{ maxWidth: "300px" }}> {showInfo && info}</div>
+        {note != null && <div>Note: {note}</div>}
       </div>
     </div>
   );

@@ -81,8 +81,8 @@ const AboutMe = () => {
     "Express",
     "Angular",
     "React",
-    "Photoshop",
-    "Illustrator",
+    "Python",
+    "SQL",
   ];
 
   return (
@@ -184,8 +184,8 @@ const AboutMe = () => {
               Who Am I?
             </h3>
             <article className="who-am-i-text">
-              <p style={{ maxWidth: "260px" }}>
-                Hey! My name is Alex Togo and I'm a web developer who recently
+              <p style={{ maxWidth: "260px", textAlign: "center" }}>
+                Hey! My name is Alex Togo and I'm a programmer who recently
                 graduated from Seneca College with a perfect 4.0 GPA!
               </p>
             </article>
@@ -193,7 +193,7 @@ const AboutMe = () => {
 
           <div>
             <h3 className="my-skills-title" style={{ textAlign: "center" }}>
-              My Skills
+              My Main Skills
             </h3>
             {}
             <Grid skills={skills} />
