@@ -15,11 +15,11 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         {/* <div className="brand-title">Alex Togo</div> */}
-        <a className="toggle-button">
+        <button className="toggle-button">
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </a>
+        </button>
         <div className="navbar-links">
           <ul>
             <li>

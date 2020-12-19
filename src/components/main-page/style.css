@@ -481,6 +481,9 @@ Navbar
   justify-content: space-between;
   width: 30px;
   height: 21px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
 }
 
 .toggle-button .bar {

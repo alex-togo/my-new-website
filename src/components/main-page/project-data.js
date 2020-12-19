@@ -12,7 +12,7 @@ const data = [
     note: null,
     img: myWebsite,
     github: "https://github.com/alex-togo/my-new-website",
-    link: "alextogo.ca",
+    link: "https://alextogo.ca",
   },
   {
     id: "proj-2",
