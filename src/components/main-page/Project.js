@@ -102,25 +102,32 @@ const Project = ({
         )}
       </div>
       <div
-        className="proj-info flex row"
+        className="proj-info flex"
         style={{
-          maxWidth: "600px",
+          maxWidth: "400px",
           textAlign: "center",
           margin: "30px 0 0 0",
         }}
       >
+        <div>{showInfo && info}</div>
         {showInfo && (
-          <div>
-            Technologies:{" "}
-            <ul>
-              {technologies.map((item) => {
-                return <li>{item}</li>;
-              })}
-            </ul>
+          <div style={{ margin: "20px 0" }}>
+            <b>Technologies: </b>
+            {technologies.map((item, i) => {
+              if (i === technologies.length - 1) {
+                return <span>{item}</span>;
+              } else {
+                return <span>{item}, </span>;
+              }
+            })}
           </div>
         )}
-        <div style={{ maxWidth: "300px" }}> {showInfo && info}</div>
-        {note != null && <div>Note: {note}</div>}
+        {note != null && (
+          <div>
+            <b>Note: </b>
+            {note}
+          </div>
+        )}
       </div>
     </div>
   );

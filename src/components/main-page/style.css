@@ -352,6 +352,11 @@ Contact Me
   /* margin-bottom: 30px; */
 }
 
+input,
+textarea {
+  color: white;
+}
+
 #contact-form input,
 textarea {
   /* width: 100%;
