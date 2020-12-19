@@ -1,4 +1,14 @@
+[build]
+  base    = ""
+  publish = "build/"
+  command = "CI= npm run build"
+
 [[headers]]
    for = "/*"
    [headers.values]
       Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
