@@ -31,7 +31,7 @@ const SectionTitle = ({ title, id }) => {
   }, [inView, id]);
 
   return (
-    <div className="flex" id={id}>
+    <div className="flex section-title-wrapper" id={id}>
       <div
         className="section-title"
         ref={ref}

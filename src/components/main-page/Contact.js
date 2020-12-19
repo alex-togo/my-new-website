@@ -10,7 +10,7 @@ const Contact = () => {
     emailSent: null,
   });
 
-  const errors = [];
+  const [errors, setErrors] = useState([]);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -29,14 +29,20 @@ const Contact = () => {
             setPerson({ name: "", email: "", message: "", emailSent: true });
           } else {
             setPerson({ name: "", email: "", message: "", emailSent: false });
+            setErrors("Message not sent.");
           }
         })
         .catch((err) => {
-          setPerson({ emailSent: false });
+          console.log(err);
+          setPerson({ ...person, emailSent: false });
         });
     } else {
-      errors.push("All fields must be filled in.");
       setPerson({ ...person, emailSent: false });
+
+      // append same error after every failed attempt
+      setErrors([...errors, "All fields must be filled in."]);
+      // only show error once on failed attempt
+      setErrors(["All fields must be filled in."]);
     }
   };
 
@@ -56,6 +62,7 @@ const Contact = () => {
             type="text"
             name="name"
             placeholder="Name"
+            value={person.name}
             onChange={handleChange}
           ></input>
           {/* <label htmlFor="email">Email: </label> */}
@@ -63,6 +70,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Email"
+            value={person.email}
             onChange={handleChange}
           ></input>
           {/* <label htmlFor="message">Message: </label> */}
@@ -71,14 +79,15 @@ const Contact = () => {
             name="message"
             placeholder="Type your message here."
             rows="5"
+            value={person.message}
             onChange={handleChange}
           ></textarea>
           <button type="submit" value="submit" className="submit-btn">
             Send
           </button>
           {person.emailSent === true && (
-            <div style={{ color: "green" }}>Message sent!</div>
-          )}{" "}
+            <div className="valid">Message sent!</div>
+          )}
           {person.emailSent === false &&
             errors.map((err, i) => {
               return (
@@ -87,11 +96,6 @@ const Contact = () => {
                 </div>
               );
             })}
-          {/* {person.emailSent === true && (
-            <div style={{ margin: "10px 0", color: "green" }}>
-              Message sent!
-            </div>
-          )} */}
         </form>
       </div>
     </section>

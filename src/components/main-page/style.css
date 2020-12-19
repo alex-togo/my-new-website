@@ -112,6 +112,17 @@ All Sections Under Main Intro
   color: white;
 }
 
+.section-title-wrapper {
+  margin: 0 0 70px 0;
+}
+
+.line {
+  height: 4px;
+  width: 70px;
+  background-color: white;
+  margin: 15px 0 0 0;
+}
+
 /* @media (min-width: 600px) {
   section {
     padding: 130px 0 130px 0;
@@ -207,13 +218,6 @@ About Me
   flex: 0 32%;
 }
 
-.line {
-  height: 4px;
-  width: 70px;
-  background-color: white;
-  margin: 15px 0 100px 0;
-}
-
 .row-list-item {
   padding: 20px 0;
 }
@@ -266,6 +270,11 @@ My Work
   padding: 5px 15px;
 }
 
+.proj-button:hover {
+  transition: background-color 0.5s ease-in-out;
+  background-color: #2f4255;
+}
+
 /* 
 ==========
 Contact Me
@@ -302,8 +311,47 @@ textarea {
   }
 }
 
+.valid {
+  color: green;
+}
+
 .error {
   color: red;
+}
+
+#contact-form input,
+textarea {
+  background-color: #1c2f41;
+  outline: none;
+  border: 1px solid #487aa8;
+}
+
+::placeholder {
+  color: white;
+  opacity: 80%;
+}
+
+.submit-btn {
+  font-size: 16px;
+  border: 2px solid white;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #1c2f41;
+  color: white;
+}
+
+.submit-btn:hover {
+  transition: background-color 0.5s ease-in-out;
+  background-color: #2f4255;
+}
+
+.submit-btn a:link {
+  color: white;
+}
+
+.submit-btn a:visited {
+  color: white;
 }
 
 /* .form-control {
