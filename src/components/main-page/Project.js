@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import anime from "animejs/lib/anime.es.js";
 
-const Project = ({ title, info, img, id }) => {
+const Project = ({ title, info, img, id, github, link }) => {
   const [showInfo, setShowInfo] = useState(false);
   const [arrowDown, setArrowDown] = useState(false);
 
@@ -49,26 +49,48 @@ const Project = ({ title, info, img, id }) => {
     <div className="flex project" ref={ref} id={id}>
       <h2>{title}</h2>
       <img src={img} alt={id} className="proj-img" />
-      <div
-        onClick={() => {
-          setShowInfo(!showInfo);
-          setArrowDown(!arrowDown);
-        }}
-        className="proj-button"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          fill="currentColor"
-          className={`${arrowDown ? "arrow-down" : "arrow-up"}`}
-          viewBox="0 0 16 16"
+      {/* <div className="img-button">View on Github</div>
+      <div className="img-button">View Project</div> */}
+      <div className="proj-links-row flex row">
+        {link === null ? (
+          <button className="button proj" disabled>
+            <a href={link}>View Project Page</a>
+          </button>
+        ) : (
+          <button className="button proj">
+            <a href={link}>View Project Page</a>
+          </button>
+        )}
+        <div
+          onClick={() => {
+            setShowInfo(!showInfo);
+            setArrowDown(!arrowDown);
+          }}
+          className="proj-button"
         >
-          <path
-            fillRule="evenodd"
-            d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
-          />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            className={`${arrowDown ? "arrow-down" : "arrow-up"}`}
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+        </div>
+        {github === null ? (
+          <button className="button proj" disabled>
+            <a href={github}>View on Github</a>
+          </button>
+        ) : (
+          <button className="button proj">
+            <a href={github}>View on Github</a>
+          </button>
+        )}
       </div>
       <div
         className="proj-info"

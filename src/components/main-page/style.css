@@ -258,12 +258,13 @@ My Work
 }
 
 .project {
-  margin: 10px 30px;
+  margin: 30px 30px;
 }
 
 .proj-button {
   font-size: 28px;
   border: 2px solid white;
+  display: inline-block;
   cursor: pointer;
   display: inline-block;
   margin-top: 20px;
@@ -274,6 +275,61 @@ My Work
   transition: background-color 0.5s ease-in-out;
   background-color: #2f4255;
 }
+
+.proj-links-row > * {
+  margin: 20px 20px;
+}
+
+.button.proj {
+  font-size: 16px;
+  border: 2px solid white;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #1c2f41;
+  color: white;
+}
+
+.button.proj:hover {
+  transition: background-color 0.5s ease-in-out;
+  background-color: #2f4255;
+}
+
+.button.proj a:link {
+  color: white;
+}
+
+.button.proj a:visited {
+  color: white;
+}
+
+.button.proj:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.button.proj a {
+  text-decoration: none;
+}
+
+/* .proj-img img {
+  transition: 0.5 all;
+}
+
+.proj-img:hover {
+  filter: brightness(50%);
+}
+
+.img-button {
+  display: none;
+  position: absolute;
+}
+
+img:hover + .img-button,
+.img-button:hover {
+  display: inline-block;
+  padding: 200px 0 0 0;
+} */
 
 /* 
 ==========
@@ -289,6 +345,7 @@ Contact Me
 #contact-form {
   width: 100%;
   max-width: 400px;
+  /* margin-bottom: 30px; */
 }
 
 #contact-form input,
