@@ -29,7 +29,7 @@ const Contact = () => {
     if (!isBot) {
       if (person.name && person.email && person.message) {
         axios
-          .post("https://my-website-email-api.herokuapp.com/api/email", person)
+          .post("/api/email", person)
           .then((res) => {
             if (res.data.success) {
               setPerson({ name: "", email: "", message: "", emailSent: true });
