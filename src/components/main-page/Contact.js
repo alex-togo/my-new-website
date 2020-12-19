@@ -44,12 +44,11 @@ const Contact = () => {
           });
       } else {
         setPerson({ ...person, emailSent: false });
+        // append same error after every failed attempt
+        setErrors([...errors, "All fields must be filled in."]);
+        // only show error once on failed attempt
+        setErrors(["All fields must be filled in."]);
       }
-
-      // append same error after every failed attempt
-      setErrors([...errors, "All fields must be filled in."]);
-      // only show error once on failed attempt
-      setErrors(["All fields must be filled in."]);
     }
   };
 
