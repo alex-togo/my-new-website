@@ -60,7 +60,7 @@ const Project = ({
       <img src={img} alt={id} className="proj-img" />
       {/* <div className="img-button">View on Github</div>
       <div className="img-button">View Project</div> */}
-      {/* <div className="proj-links-row flex links-row">
+      <div className="proj-links-row flex links-row">
         {link === null ? (
           <button className="button-proj-link" disabled>
             <a href={link}>View Project Page</a>
@@ -100,7 +100,7 @@ const Project = ({
             <a href={github}>View on Github</a>
           </button>
         )}
-      </div> */}
+      </div>
       <div
         className="proj-info flex"
         style={{

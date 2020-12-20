@@ -143,10 +143,22 @@ Intro
 
 .darkRectangle {
   width: 60%;
-  /* max-width: 684px; */
+  margin: 0 auto;
   /* background-color: rgb(54, 54, 54); */
   padding: 50px;
   background-color: #1d2a36;
+}
+
+@media (max-width: 300px) {
+  .darkRectangle {
+    padding: 0;
+  }
+  .title-text span {
+    font-size: 20px;
+  }
+  .button a {
+    font-size: 12px;
+  }
 }
 
 /* @media (max-width: 400px) {
@@ -320,6 +332,12 @@ My Work
 
 .flex.links-row {
   flex-direction: row;
+}
+
+@media (max-width: 400px) {
+  .flex.links-row {
+    flex-direction: column;
+  }
 }
 
 /* .proj-img img {
