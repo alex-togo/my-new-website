@@ -28,7 +28,8 @@ const data = [
   {
     id: "proj-3",
     title: "Blog Post Website",
-    info: "Created using Angular, Bootstrap and MongoDB. Hosted on Netlify.",
+    info:
+      "A scalable blog post website that uses an API to create/edit/delete posts. Users can comment on posts and the number of views per post are tracked. ",
     technologies: [
       "Angular",
       "Bootstrap",
