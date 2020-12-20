@@ -63,13 +63,13 @@ const Contact = () => {
           method="post"
           onSubmit={handleSubmit}
         >
-          <div style={{ height: "0px" }}>
+          <div style={{ height: "0" }}>
             <input
               type="checkbox"
               name="mrDestructoid"
               onChange={handleChange}
             ></input>
-            <label htmlFor="mrDestructoid">
+            <label htmlFor="mrDestructoid" hidden>
               Do you agree to the terms and services?
             </label>
           </div>

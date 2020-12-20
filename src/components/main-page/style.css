@@ -247,6 +247,12 @@ My Work
   max-width: 800px;
 }
 
+@media (max-width: 430px) {
+  .proj-img {
+    width: 75%;
+  }
+}
+
 .arrow-up {
   transform: rotate(0deg);
   transition: transform 0.3s linear;
@@ -280,7 +286,7 @@ My Work
   margin: 20px 20px;
 }
 
-.button.proj {
+.button-proj-link {
   font-size: 16px;
   border: 2px solid white;
   cursor: pointer;
@@ -290,25 +296,25 @@ My Work
   color: white;
 }
 
-.button.proj:hover {
+.button-proj-link:hover {
   transition: background-color 0.5s ease-in-out;
   background-color: #2f4255;
 }
 
-.button.proj a:link {
+.button-proj-link a:link {
   color: white;
 }
 
-.button.proj a:visited {
+.button-proj-link a:visited {
   color: white;
 }
 
-.button.proj:disabled {
-  opacity: 50%;
+.button-proj-link:disabled {
+  opacity: 0.5;
   pointer-events: none;
 }
 
-.button.proj a {
+.button-proj-link a {
   text-decoration: none;
 }
 
@@ -392,9 +398,10 @@ textarea {
   border: 1px solid #487aa8;
 }
 
-::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: white;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .submit-btn {
