@@ -38,7 +38,7 @@ const Project = ({
   useEffect(() => {
     if (showInfo) {
       anime({
-        targets: ".project .proj-info",
+        targets: "proj-links-row .proj-info",
         opacity: [0, 1],
         scale: [0, 1],
         duration: 1200,
@@ -46,7 +46,7 @@ const Project = ({
     }
     if (!showInfo) {
       anime({
-        targets: ".project .proj-info",
+        targets: "proj-links-row .proj-info",
         opacity: [1, 0],
         scale: [1, 0],
         duration: 1200,
@@ -122,7 +122,7 @@ const Project = ({
             })}
           </div>
         )}
-        {note != null && (
+        {showInfo && note != null && (
           <div>
             <b>Note: </b>
             {note}
