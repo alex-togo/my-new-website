@@ -79,6 +79,7 @@ const Contact = () => {
             type="text"
             name="name"
             placeholder="Name"
+            maxLength="50"
             value={person.name}
             onChange={handleChange}
           ></input>
@@ -87,6 +88,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Email"
+            maxLength="50"
             value={person.email}
             onChange={handleChange}
           ></input>
@@ -94,7 +96,8 @@ const Contact = () => {
           <textarea
             type="text"
             name="message"
-            placeholder="Type your message here."
+            placeholder="Type your message here (Max 500 Characters)"
+            maxLength="500"
             rows="5"
             value={person.message}
             onChange={handleChange}
