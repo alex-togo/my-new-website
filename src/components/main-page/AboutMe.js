@@ -186,7 +186,7 @@ const AboutMe = () => {
             <article className="who-am-i-text">
               <p style={{ maxWidth: "260px", textAlign: "center" }}>
                 Hey! My name is Alex Togo and I'm a programmer who recently
-                graduated from Seneca College with a perfect 4.0 GPA!
+                graduated from Seneca College with a 4.0/4.0 GPA!
               </p>
             </article>
           </div>
