@@ -86,13 +86,13 @@ const Intro = () => {
             <div className="button">
               <a
                 className="flex"
-                href="#my-work"
+                href="#about-me"
                 style={{
                   textDecoration: "none",
                   textAlign: "center",
                 }}
               >
-                View My Work
+                Learn More
               </a>
             </div>
           </div>

@@ -75,8 +75,9 @@ const Project = ({
             setShowInfo(!showInfo);
             setArrowDown(!arrowDown);
           }}
-          className="proj-button"
+          className="button-proj-link flex"
         >
+          Info
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -109,15 +110,21 @@ const Project = ({
           margin: "30px 0 0 0",
         }}
       >
-        <div>{showInfo && info}</div>
+        {showInfo && (
+          <div>
+            {info.map((item, i) => {
+              return <p key={i}>{item}</p>;
+            })}
+          </div>
+        )}
         {showInfo && (
           <div style={{ margin: "20px 0" }}>
             <b>Technologies: </b>
             {technologies.map((item, i) => {
               if (i === technologies.length - 1) {
-                return <span>{item}</span>;
+                return <span key={i}>{item}</span>;
               } else {
-                return <span>{item}, </span>;
+                return <span key={i}>{item}, </span>;
               }
             })}
           </div>
