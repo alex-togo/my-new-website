@@ -29,9 +29,10 @@ const AboutMe = () => {
       )
       .add(
         {
-          targets: "#profile-pic",
-          translateX: [-200, 0],
+          targets: ".profile-pic",
+          translateX: [-400, 0],
           opacity: [0, 1],
+          borderWidth: [0, 3],
           easing: "easeInSine",
           delay: anime.stagger(400),
           duration: 800,
@@ -49,18 +50,10 @@ const AboutMe = () => {
       )
       .add(
         {
-          targets: "#about-text",
+          targets: ".who-am-i-text",
           opacity: [0, 1],
           easing: "easeInSine",
           duration: 600,
-        },
-        "-=1000"
-      )
-      .add(
-        {
-          targets: ".my-skills-title",
-          opacity: [0, 1],
-          translateY: [270, 0],
         },
         "-=1000"
       )
@@ -164,17 +157,21 @@ const AboutMe = () => {
           </div>
         </div>
         <div
-          className="skills-container flex space-between sm"
+          className="flex space-between sm"
           style={{
             margin: "75px 0 0 0",
           }}
         >
           <img
-            id="profile-pic"
+            className="profile-pic"
             src={me}
             height="auto"
             width="100%"
-            style={{ maxWidth: "200px", borderRadius: "100px" }}
+            style={{
+              maxWidth: "200px",
+              borderRadius: "100px",
+              border: "1px solid white",
+            }}
             alt="Me"
           />
 
@@ -191,7 +188,7 @@ const AboutMe = () => {
             </article>
           </div>
 
-          <div>
+          <div style={{ overflow: "hidden" }}>
             <h3 className="my-skills-title" style={{ textAlign: "center" }}>
               My Main Skills
             </h3>
