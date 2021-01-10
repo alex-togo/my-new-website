@@ -10,6 +10,9 @@ const Intro = () => {
 
     dr.add({
       duration: 400,
+      begin: function () {
+        document.querySelector(".darkRectangle").style.display = "flex";
+      },
       easing: "easeInOutExpo",
       scaleX: [0.05, 0.05],
       scaleY: [0, 1],
@@ -71,9 +74,8 @@ const Intro = () => {
   return (
     <>
       <section className="intro-bg" id="intro">
-        {/* <Navbar /> */}
         <div className="container flex" style={{ height: "95vh" }}>
-          <div className="darkRectangle flex">
+          <div className="darkRectangle flex" style={{ display: "none" }}>
             <div className="title-text">
               <span className="hey">Hey,</span>
               <span className="im"> I'm </span>
