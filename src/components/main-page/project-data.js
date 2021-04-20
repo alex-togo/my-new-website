@@ -15,7 +15,7 @@ const data = [
     note: null,
     img: swapi,
     github: "https://github.com/alex-togo/starwars-react-app",
-    link: null,
+    link: "https://keen-nightingale-21fdbc.netlify.app/",
   },
   {
     id: "proj-2",
