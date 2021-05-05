@@ -74,7 +74,7 @@ const AboutMe = () => {
     "Express",
     "Angular",
     "React",
-    "Python",
+    "MongoDB",
     "SQL",
   ];
 
