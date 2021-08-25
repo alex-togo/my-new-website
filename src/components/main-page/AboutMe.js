@@ -1,5 +1,5 @@
 import React from "react";
-import me from "./images/me-profile.jpg";
+import me from "./images/me-profile-1.jpg";
 import Grid from "./Grid";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
