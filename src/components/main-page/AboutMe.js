@@ -70,12 +70,12 @@ const AboutMe = () => {
     "HTML",
     "CSS",
     "JavaScript",
-    "Node.js",
-    "Express",
-    "Angular",
+    "TypeScript",
     "React",
-    "MongoDB",
-    "SQL",
+    "Node.js",
+    "GSAP",
+    "SASS",
+    "Express",
   ];
 
   return (
