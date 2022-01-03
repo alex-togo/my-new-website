@@ -1,56 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import SectionTitle from "./SectionTitle";
-import axios from "axios";
 
 const Contact = () => {
-  const [person, setPerson] = useState({
-    name: "",
-    email: "",
-    message: "",
-    emailSent: null,
-  });
-  const [isBot, setIsBot] = useState(false);
-
-  const [errors, setErrors] = useState([]);
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    const checked = e.target.checked;
-    if (checked) {
-      setIsBot(true);
-    }
-    setPerson({ ...person, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!isBot) {
-      if (person.name && person.email && person.message) {
-        axios
-          .post("https://my-website-email-api.herokuapp.com/api/email", person)
-          .then((res) => {
-            if (res.data.success) {
-              setPerson({ name: "", email: "", message: "", emailSent: true });
-            } else {
-              setPerson({ name: "", email: "", message: "", emailSent: false });
-              setErrors("Message not sent.");
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-            setPerson({ ...person, emailSent: false });
-          });
-      } else {
-        setPerson({ ...person, emailSent: false });
-        // append same error after every failed attempt
-        // setErrors([...errors, "All fields must be filled in."]);
-        // only show error once on failed attempt
-        setErrors(["All fields must be filled in."]);
-      }
-    }
-  };
+  const [state, handleSubmit] = useForm("xoqrvngy");
 
   return (
     <section className="contact-me info-section" id="contact">
@@ -60,67 +13,34 @@ const Contact = () => {
           id="contact-form"
           name="contact"
           className="flex wrap"
-          method="post"
+          // method="post"
           onSubmit={handleSubmit}
         >
-          <div style={{ height: "0" }}>
-            <input
-              type="checkbox"
-              name="mrDestructoid"
-              onChange={handleChange}
-            ></input>
-            <label htmlFor="mrDestructoid" hidden>
-              Do you agree to the terms and services?
-            </label>
-          </div>
-
-          {/* <label htmlFor="name">Name: </label> */}
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            maxLength="50"
-            value={person.name}
-            onChange={handleChange}
-          ></input>
-          {/* <label htmlFor="email">Email: </label> */}
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            maxLength="50"
-            value={person.email}
-            onChange={handleChange}
-          ></input>
-          {/* <label htmlFor="message">Message: </label> */}
+          <input type="text" name="name" placeholder="Name" maxLength="50" />
+          <input type="email" name="email" placeholder="Email" maxLength="50" />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
           <textarea
             type="text"
             name="message"
             placeholder="Type your message here (Max 500 Characters)"
             maxLength="500"
             rows="5"
-            value={person.message}
-            onChange={handleChange}
-          ></textarea>
+          />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
           <button
             type="submit"
             value="submit"
             className="submit-btn"
             style={{ marginBottom: "10px" }}
+            disabled={state.submitting}
           >
             Send
           </button>
-          {person.emailSent === true && (
-            <div className="valid">Message sent!</div>
-          )}
-          {person.emailSent === false &&
-            errors.map((err, i) => {
-              return (
-                <div className="error" key={i}>
-                  {err}
-                </div>
-              );
-            })}
+          {state.succeeded && <div className="valid">Message sent!</div>}
         </form>
       </div>
     </section>
