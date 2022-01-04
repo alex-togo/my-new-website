@@ -21,7 +21,7 @@ const data = [
     id: "proj-2",
     title: "My Personal Website",
     info: ["My personal portfolio website created to showcase my skills!"],
-    technologies: ["React", "anime.js", "Node.js", "Express", "SendGrid"],
+    technologies: ["React", "anime.js", "Node.js"],
     note: null,
     img: myWebsite,
     github: "https://github.com/alex-togo/my-new-website",
