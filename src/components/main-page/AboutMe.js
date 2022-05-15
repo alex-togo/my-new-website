@@ -182,8 +182,7 @@ const AboutMe = () => {
             </h3>
             <article className="who-am-i-text">
               <p style={{ maxWidth: "260px", textAlign: "center" }}>
-                Hey! My name is Alex Togo and I'm a student in Seneca College's
-                Computer Programming & Analysis program.
+                Hey! My name is Alex Togo and I'm a Junior Developer.
               </p>
             </article>
           </div>
