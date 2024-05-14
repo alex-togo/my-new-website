@@ -57,9 +57,7 @@ const Project = ({
   return (
     <div className="flex project" ref={ref} id={id}>
       <h2>{title}</h2>
-      <img src={img} alt={id} className="proj-img" />
-      {/* <div className="img-button">View on Github</div>
-      <div className="img-button">View Project</div> */}
+      {img ? <img src={img} alt={id} className="proj-img" /> : null}
       <div className="proj-links-row flex links-row">
         {link === null ? (
           <button className="button-proj-link" disabled>
