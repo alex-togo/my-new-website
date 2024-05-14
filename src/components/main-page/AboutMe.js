@@ -68,23 +68,18 @@ const AboutMe = () => {
 
   const skills = [
     "HTML",
-    "CSS",
+    "CSS/SASS",
     "JavaScript",
     "TypeScript",
     "React",
+    "NextJS",
     "Node.js",
     "GSAP",
-    "SASS",
-    "Express",
+    "PHP/Hack",
   ];
 
   return (
-    <section
-      className="about-me info-section"
-      id="about-me"
-      ref={ref}
-      // style={{ border: "1px solid white" }}
-    >
+    <section className="about-me info-section" id="about-me" ref={ref}>
       <div className="container flex">
         <SectionTitle title={"About Me"} id="about-me-title" />
         <div className="flex space-between md row-list">
@@ -182,7 +177,7 @@ const AboutMe = () => {
             </h3>
             <article className="who-am-i-text">
               <p style={{ maxWidth: "260px", textAlign: "center" }}>
-                Hey! My name is Alex Togo and I'm a Junior Developer.
+                Hey! My name is Alex Togo and I'm a Front End Developer.
               </p>
             </article>
           </div>
@@ -191,7 +186,6 @@ const AboutMe = () => {
             <h3 className="my-skills-title" style={{ textAlign: "center" }}>
               My Main Skills
             </h3>
-            {}
             <Grid skills={skills} />
           </div>
         </div>
